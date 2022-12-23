@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s37-aS-lfj">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="RnF-tE-vdw">
+            <objects>
+                <viewController id="qCD-T0-rLi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Koa-17-M1f">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QCN-Gt-d7f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="ic_search" id="Oda-zU-PcE">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="79h-ZN-egc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="430"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="VHL-Mx-CPN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKr-VE-pp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="eRn-Ic-vgY" customClass="HomeViewController" customModule="movie_app_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e3b-jw-hVB"/>
+                    <connections>
+                        <segue destination="ix7-93-Ix3" kind="show" identifier="goToMovieDetail" id="X5h-wO-XD5"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1360" y="1158"/>
+        </scene>
+        <!--MovieDetailViewController-->
+        <scene sceneID="98g-jR-HT0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieDetail" referencedIdentifier="MovieDetailViewController" id="ix7-93-Ix3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QKA-kw-Ee8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bq-3y-Eq9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="1652"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="v61-f5-9L3">
+            <objects>
+                <tabBarController id="s37-aS-lfj" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0aF-KZ-hcq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="ColorPrimaryAccent"/>
+                        <color key="selectedImageTintColor" name="ColorBlue"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="f3j-xu-oSv" kind="relationship" relationship="viewControllers" id="Lb5-Ex-gee"/>
+                        <segue destination="qCD-T0-rLi" kind="relationship" relationship="viewControllers" id="yWe-3r-4YE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i23-SX-twA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="-372"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="RUm-qU-x9N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f3j-xu-oSv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="BNT-Rl-ziU">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6rb-Fa-3XE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eRn-Ic-vgY" kind="relationship" relationship="rootViewController" id="87h-8e-DnI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tbh-1h-s1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359.5419847328244" y="429.57746478873241"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_home" width="29.333333969116211" height="32"/>
+        <image name="ic_search" width="29.333333969116211" height="32"/>
+        <namedColor name="ColorBlue">
+            <color red="0.0078431372549019607" green="0.58823529411764708" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorPrimaryAccent">
+            <color red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="369" id="KGk-i7-Jjw" customClass="MovieVideoTableViewCell" customModule="movie_app_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="489" height="369"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="489" height="369"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IL9-8E-SDu">
+                        <rect key="frame" x="28" y="12" width="433" height="345"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKD-NR-GCR" userLabel="Video View">
+                                <rect key="frame" x="0.0" y="0.0" width="433" height="248"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7F-kz-uUV">
+                                        <rect key="frame" x="0.0" y="0.0" width="433" height="248"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Z7F-kz-uUV" secondAttribute="bottom" id="Dg5-FT-2NB"/>
+                                    <constraint firstAttribute="height" constant="248" id="LtW-BB-lGu"/>
+                                    <constraint firstItem="Z7F-kz-uUV" firstAttribute="leading" secondItem="aKD-NR-GCR" secondAttribute="leading" id="a9h-qc-mmp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z7F-kz-uUV" secondAttribute="trailing" id="j92-VT-s3H"/>
+                                    <constraint firstItem="Z7F-kz-uUV" firstAttribute="top" secondItem="aKD-NR-GCR" secondAttribute="top" id="v7d-jG-RLO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1Q-xD-5YL">
+                                <rect key="frame" x="0.0" y="264" width="433" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2c-SM-NtA">
+                                <rect key="frame" x="0.0" y="293" width="433" height="17.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aKD-NR-GCR" firstAttribute="top" secondItem="IL9-8E-SDu" secondAttribute="top" id="ECD-tt-rOa"/>
+                            <constraint firstAttribute="bottom" secondItem="n2c-SM-NtA" secondAttribute="bottom" constant="16" id="LA5-EN-0rz"/>
+                            <constraint firstAttribute="trailing" secondItem="n2c-SM-NtA" secondAttribute="trailing" id="PWc-Ku-HSo"/>
+                            <constraint firstItem="A1Q-xD-5YL" firstAttribute="top" secondItem="aKD-NR-GCR" secondAttribute="bottom" constant="16" id="R1M-5T-WkN"/>
+                            <constraint firstAttribute="trailing" secondItem="aKD-NR-GCR" secondAttribute="trailing" id="TKk-eY-pfL"/>
+                            <constraint firstItem="n2c-SM-NtA" firstAttribute="leading" secondItem="IL9-8E-SDu" secondAttribute="leading" id="VvC-qg-6MJ"/>
+                            <constraint firstAttribute="trailing" secondItem="A1Q-xD-5YL" secondAttribute="trailing" id="ZbV-ts-xd1"/>
+                            <constraint firstItem="n2c-SM-NtA" firstAttribute="top" secondItem="A1Q-xD-5YL" secondAttribute="bottom" constant="8" id="hGE-b3-Une"/>
+                            <constraint firstItem="aKD-NR-GCR" firstAttribute="leading" secondItem="IL9-8E-SDu" secondAttribute="leading" id="iJh-6k-tUG"/>
+                            <constraint firstItem="A1Q-xD-5YL" firstAttribute="leading" secondItem="IL9-8E-SDu" secondAttribute="leading" id="uXj-kb-D6w"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IL9-8E-SDu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="Ilh-9W-Hqg"/>
+                    <constraint firstAttribute="bottom" secondItem="IL9-8E-SDu" secondAttribute="bottom" constant="12" id="epP-I9-HQz"/>
+                    <constraint firstAttribute="trailing" secondItem="IL9-8E-SDu" secondAttribute="trailing" constant="28" id="mwl-Ar-NZu"/>
+                    <constraint firstItem="IL9-8E-SDu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="zoZ-Gq-Aqn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nameLabel" destination="A1Q-xD-5YL" id="2Vw-xX-dPH"/>
+                <outlet property="typeLabel" destination="n2c-SM-NtA" id="doC-lq-L9l"/>
+                <outlet property="webView" destination="Z7F-kz-uUV" id="4sC-J9-wQO"/>
+            </connections>
+            <point key="canvasLocation" x="80.152671755725194" y="144.01408450704227"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

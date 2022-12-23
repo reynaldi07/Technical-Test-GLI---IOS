@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="122" id="KGk-i7-Jjw" customClass="MovieReviewTableViewCell" customModule="movie_app_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="122"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="122"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vf-dE-SUI">
+                        <rect key="frame" x="28" y="12" width="318" height="98"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Msg-37-LiO">
+                                <rect key="frame" x="0.0" y="0.0" width="318" height="98"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Kz4-UD-TYo">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="72.666666666666671"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kV5-AU-yKw">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="ehw-qg-NvK"/>
+                                                    <constraint firstAttribute="width" constant="44" id="lC8-HV-V0E"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvL-an-UED">
+                                                <rect key="frame" x="0.0" y="57.999999999999993" width="44" height="14.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
+                                                <color key="textColor" name="ColorBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="AsN-lq-TxD">
+                                        <rect key="frame" x="56" y="0.0" width="262" height="40.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHe-Lc-1ix">
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="19.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utc-Gp-xhf">
+                                                <rect key="frame" x="0.0" y="25.666666666666668" width="262" height="14.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Msg-37-LiO" firstAttribute="leading" secondItem="4vf-dE-SUI" secondAttribute="leading" id="D0H-ib-Ab5"/>
+                            <constraint firstItem="Msg-37-LiO" firstAttribute="top" secondItem="4vf-dE-SUI" secondAttribute="top" id="X3d-mu-Ugu"/>
+                            <constraint firstAttribute="bottom" secondItem="Msg-37-LiO" secondAttribute="bottom" id="YPh-FH-YvQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Msg-37-LiO" secondAttribute="trailing" id="hJy-rM-gn2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="4vf-dE-SUI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="C9Z-p8-kcF"/>
+                    <constraint firstAttribute="trailing" secondItem="4vf-dE-SUI" secondAttribute="trailing" constant="28" id="cG3-lO-kPT"/>
+                    <constraint firstItem="4vf-dE-SUI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="kza-Ic-pdB"/>
+                    <constraint firstAttribute="bottom" secondItem="4vf-dE-SUI" secondAttribute="bottom" constant="12" id="mM2-vS-Myi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorImage" destination="kV5-AU-yKw" id="Qp8-rB-ivP"/>
+                <outlet property="commentLabel" destination="Utc-Gp-xhf" id="VNP-FE-dl7"/>
+                <outlet property="nameLabel" destination="AHe-Lc-1ix" id="WQl-9E-sRj"/>
+                <outlet property="rateLabel" destination="hvL-an-UED" id="Cnr-9w-UzQ"/>
+            </connections>
+            <point key="canvasLocation" x="249" y="20"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="ColorBlue">
+            <color red="0.0078431372549019607" green="0.58823529411764708" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
