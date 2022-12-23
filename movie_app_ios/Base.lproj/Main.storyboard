@@ -4,29 +4,9 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
-        <scene sceneID="RnF-tE-vdw">
-            <objects>
-                <viewController id="qCD-T0-rLi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Koa-17-M1f">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="QCN-Gt-d7f"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="ic_search" id="Oda-zU-PcE">
-                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="79h-ZN-egc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2535" y="430"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="VHL-Mx-CPN">
             <objects>
@@ -38,7 +18,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKr-VE-pp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1360" y="1158"/>
+            <point key="canvasLocation" x="3844" y="-373"/>
         </scene>
         <!--MovieDetailViewController-->
         <scene sceneID="98g-jR-HT0">
@@ -48,7 +28,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bq-3y-Eq9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359" y="1652"/>
+            <point key="canvasLocation" x="4710" y="-373"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="v61-f5-9L3">
@@ -62,7 +42,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="f3j-xu-oSv" kind="relationship" relationship="viewControllers" id="Lb5-Ex-gee"/>
-                        <segue destination="qCD-T0-rLi" kind="relationship" relationship="viewControllers" id="yWe-3r-4YE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i23-SX-twA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -88,20 +67,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tbh-1h-s1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359.5419847328244" y="429.57746478873241"/>
+            <point key="canvasLocation" x="2914" y="-373"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_home" width="29.333333969116211" height="32"/>
-        <image name="ic_search" width="29.333333969116211" height="32"/>
         <namedColor name="ColorBlue">
             <color red="0.0078431372549019607" green="0.58823529411764708" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ColorPrimaryAccent">
             <color red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
