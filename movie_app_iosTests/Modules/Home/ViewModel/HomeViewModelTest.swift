@@ -52,7 +52,7 @@ final class HomeViewModelTest: QuickSpec {
                 service.response = DummyJsonResponse.ApiResponse.Movie.moviesResponse
                 viewModel.getNowPlayingMovies()
                 expect(isDidFinishedGetNowPlayingMovies).toEventually(beTrue())
-                expect(errorMessage).toEventually(beEmpty())
+                expect(errorMessage).toEventually(beNil())
                 expect(viewModel.nowPlayingMovies).toEventuallyNot(beNil())
                 expect(viewModel.nowPlayingList).toEventuallyNot(beNil())
             }
@@ -67,7 +67,7 @@ final class HomeViewModelTest: QuickSpec {
                 service.response = DummyJsonResponse.ApiResponse.Movie.moviesResponse
                 viewModel.getUpcomingMovies()
                 expect(isDidFinishedGetUpcomingMovies).toEventually(beTrue())
-                expect(errorMessage).toEventually(beEmpty())
+                expect(errorMessage).toEventually(beNil())
                 expect(viewModel.upcomingMovies).toEventuallyNot(beNil())
                 expect(viewModel.upcomingList).toEventuallyNot(beNil())
             }

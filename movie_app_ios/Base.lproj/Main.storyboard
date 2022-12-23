@@ -30,13 +30,13 @@
         <!--Home View Controller-->
         <scene sceneID="VHL-Mx-CPN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SKr-VE-pp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="eRn-Ic-vgY" customClass="HomeViewController" customModule="movie_app_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="e3b-jw-hVB"/>
                     <connections>
                         <segue destination="ix7-93-Ix3" kind="show" identifier="goToMovieDetail" id="X5h-wO-XD5"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKr-VE-pp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1360" y="1158"/>
         </scene>

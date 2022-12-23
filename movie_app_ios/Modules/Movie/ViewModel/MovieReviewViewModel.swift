@@ -54,7 +54,7 @@ class MovieReviewViewModel : MovieReviewViewModelProtocol {
                 case .success(let response):
                     self?.reviews = response
                     self?.reviewList.append(contentsOf: response.results ?? [])
-                    self?.didFinishGetReview?("")
+                    self?.didFinishGetReview?(nil)
                 case .failure(let error):
                     self?.didFinishGetReview?(error.localizedDescription)
                 }

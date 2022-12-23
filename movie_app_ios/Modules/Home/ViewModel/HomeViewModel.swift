@@ -67,7 +67,7 @@ class HomeViewModel: HomeViewModelProtocol {
                 case .success(let response):
                     self?.nowPlayingMovies = response
                     self?.nowPlayingList.append(contentsOf: response.results ?? [])
-                    self?.didFinishGetNowPlayingMovies?("")
+                    self?.didFinishGetNowPlayingMovies?(nil)
                 case .failure(let error):
                     self?.didFinishGetNowPlayingMovies?(error.localizedDescription)
                 }
@@ -88,7 +88,7 @@ class HomeViewModel: HomeViewModelProtocol {
                 case .success(let response):
                     self?.upcomingMovies = response
                     self?.upcomingList.append(contentsOf: response.results ?? [])
-                    self?.didFinishGetUpcomingMovies?("")
+                    self?.didFinishGetUpcomingMovies?(nil)
                 case .failure(let error):
                     self?.didFinishGetUpcomingMovies?(error.localizedDescription)
                 }

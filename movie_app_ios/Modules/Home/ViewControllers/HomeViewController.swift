@@ -28,7 +28,7 @@ class HomeViewController: UISimpleSlidingTabController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == Constants.Segue.goToMovieDetailSegue) {
             let movieDetailView = segue.destination as! MovieDetailViewController
-            let movie = sender as! Movie
+            let movie = sender as? Movie
             let vm = MovieDetailViewModel.init(service: MovieService())
             movieDetailView.movieData = movie
             movieDetailView.viewModel = vm

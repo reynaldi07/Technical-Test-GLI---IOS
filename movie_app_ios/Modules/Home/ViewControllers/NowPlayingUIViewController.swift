@@ -6,12 +6,28 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class NowPlayingUIViewController: UIViewController {
     var viewModel: HomeViewModelProtocol?
     var movieTapped: ((_ data: Movie) -> Void)?
+    var refreshController: UIRefreshControl!
+    private var isLoading: Bool  = false {
+        didSet {
+            isLoading ? loadingView.showLoading() : loadingView.hideLoading()
+        }
+    }
+    private lazy var loadingView: LoadingView = {
+        let view = LoadingView(height: 80)
+        view.backgroundColor = .clear
+        view.hideLoading()
+        return view
+    }()
     
     @IBOutlet weak var movieCollection: UICollectionView!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var emptyImage: UIImageView!
     
     convenience init(viewModel: HomeViewModelProtocol) {
         self.init()
@@ -20,6 +36,7 @@ class NowPlayingUIViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isLoading = true
         movieCollection.delegate = self
         movieCollection.dataSource = self
         setupUI()
@@ -38,12 +55,52 @@ class NowPlayingUIViewController: UIViewController {
     }
     
     func registerMovieGrid() {
+        refreshController = UIRefreshControl()
+        refreshController.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
         let nib = UINib(nibName: MovieCollectionViewCell.nibName, bundle: nil)
         movieCollection?.register(nib, forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
+        movieCollection.refreshControl = refreshController
     }
     
     func onFinishedGetMovies(_ error: String?) {
+        DispatchQueue.main.async {
+            self.refreshController.endRefreshing()
+            self.isLoading = false
+            if let error = error {
+                self.view.makeToast(error, duration: 2.0, position: .bottom)
+            }
+
+        }
+        if error != nil {
+            emptyView.layer.isHidden = false
+            movieCollection.layer.isHidden = true
+            emptyLabel.text = error
+            emptyImage.image = UIImage(systemName: "wrongwaysign")
+            return
+        }
+        if viewModel?.nowPlayingList.isEmpty == true {
+            emptyView.layer.isHidden = false
+            movieCollection.layer.isHidden = true
+            emptyLabel.text = "we are sorry, we can not find the movie"
+        } else {
+            emptyView.layer.isHidden = true
+            movieCollection.layer.isHidden = false
+        }
         movieCollection.reloadData()
+    }
+    
+    @objc func onPullToRefresh(_ sender: Any) {
+        self.isLoading = true
+        viewModel?.currentPageNowPlaying = 1
+        viewModel?.nowPlayingList = []
+        viewModel?.getNowPlayingMovies()
+    }
+    
+    @IBAction func tryAgainPressed(_ sender: UIButton) {
+        self.isLoading = true
+        viewModel?.currentPageNowPlaying = 1
+        viewModel?.nowPlayingList = []
+        viewModel?.getNowPlayingMovies()
     }
 }
 

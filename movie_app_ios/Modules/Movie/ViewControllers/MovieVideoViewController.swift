@@ -12,7 +12,10 @@ class MovieVideoViewController: UIViewController {
     var movieData: Movie?
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
+    @IBOutlet weak var emptyImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         regisTableViewCell()
@@ -21,6 +24,18 @@ class MovieVideoViewController: UIViewController {
     }
     
     func onFinishGetVideo(_ error: String?) {
+        if error != nil {
+            emptyView.layer.isHidden = false
+            tableView.layer.isHidden = true
+            emptyLabel.text = error
+            emptyImage.image = UIImage(systemName: "wrongwaysign")
+            return
+        }
+        if viewModel?.videoList.isEmpty == true {
+            emptyView.layer.isHidden = false
+            tableView.layer.isHidden = true
+            emptyLabel.text = "we are sorry, we can not find the video"
+        }
         tableView.reloadData()
     }
     

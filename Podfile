@@ -5,6 +5,7 @@ target 'movie_app_ios' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'SDWebImage'
+  pod 'Toast-Swift'
 
   # Pods for movie_app_ios
 

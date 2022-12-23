@@ -50,7 +50,7 @@ class MovieVideoViewModel : MovieVideoViewModelProtocol {
                 case .success(let response):
                     self?.videos = response
                     self?.videoList.append(contentsOf: response.results ?? [])
-                    self?.didFinishGetVideo?("")
+                    self?.didFinishGetVideo?(nil)
                 case .failure(let error):
                     self?.didFinishGetVideo?(error.localizedDescription)
                 }

@@ -46,7 +46,7 @@ class MovieDetailViewModel: MovieDetailViewModelProtocol {
                 switch result {
                 case .success(let response):
                     self?.dataMovie = response
-                    self?.didFinishGetDetailMovie?("")
+                    self?.didFinishGetDetailMovie?(nil)
                 case .failure(let error):
                     self?.didFinishGetDetailMovie?(error.localizedDescription)
                 }

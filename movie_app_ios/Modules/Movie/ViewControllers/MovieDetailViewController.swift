@@ -20,6 +20,10 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var reviewsView: UIView!
     @IBOutlet weak var videosView: UIView!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var emptyImage: UIImageView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +73,13 @@ class MovieDetailViewController: UIViewController {
     }
     
     func onFinishGetDetailMovie(_ error: String?) {
+        if error != nil {
+            emptyView.layer.isHidden = false
+            contentView.layer.isHidden = true
+            emptyLabel.text = error
+            emptyImage.image = UIImage(systemName: "wrongwaysign")
+            return
+        }
         self.movieData = viewModel?.dataMovie
         setupUI()
     }
